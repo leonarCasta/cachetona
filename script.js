@@ -366,7 +366,7 @@ const COLORS = ['#ffcc33','#ffb300','#ffe066','#f5a623','#ffd700','#fff2b2','#e6
 const textGroup = new THREE.Group(); scene.add(textGroup);
 
 document.fonts.ready.then(() => {
-  buildWordPositionsInto(wordPos, 'Mi Starlight', HEART_COUNT);
+  buildWordPositionsInto(wordPos, 'Mi Cachetona', HEART_COUNT);
   for(let i=0; i<WORDS.length; i++){
     const tex = makeTextTexture(WORDS[i], COLORS[i%COLORS.length]);
     const mat = new THREE.SpriteMaterial({map: tex, transparent: true, depthWrite: false, alphaTest: 0.01});

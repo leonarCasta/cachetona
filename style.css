@@ -1,0 +1,194 @@
+
+  *{box-sizing:border-box;}
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    font-family: 'Indie Flower','Bradley Hand','Segoe Script',cursive;
+    touch-action: none;
+    -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;
+  }
+  canvas { display: block; }
+
+  #start-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at center, #3a2600 0%, #000000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    color: #ffdd66;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 1s ease;
+    text-shadow: 0 0 15px #ffcc33;
+    flex-direction: column;
+  }
+  #start-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .pulse-text {
+    animation: pulse 1.5s infinite alternate;
+    letter-spacing: 0.5px;
+  }
+  .start-note {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffe08a;
+    opacity: 0.9;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 480px) {
+    .start-note { font-size: 0.95rem; margin-bottom: 8px; }
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+  }
+  .start-heart {
+    margin-top: 18px;
+    font-size: 3.4rem;
+    animation: startHeartBeat 1.1s ease-in-out infinite;
+  }
+  @keyframes startHeartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+  }
+  @media (max-width: 480px) {
+    .start-heart { font-size: 2.6rem; margin-top: 12px; }
+  }
+
+  #top-title {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1500;
+    pointer-events: none;
+    font-family: 'Indie Flower','Bradley Hand','Segoe Script',cursive;
+    font-weight: 700;
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ffdd66, #ffb300, #fff4b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 14px rgba(255, 180, 40, 0.55));
+    animation: titlePulse 1.6s ease-in-out infinite;
+  }
+  @keyframes titlePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+  @media (max-width: 480px) {
+    #top-title { font-size: 1.8rem; top: 14px; }
+  }
+
+  /* ===== Botón de mensaje ===== */
+  #love-letter-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1800;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #e8a628, #ffcc33);
+    box-shadow: 0 0 18px rgba(255, 190, 40, 0.6), 0 4px 14px rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.55rem;
+    animation: btnBeat 1.8s ease-in-out infinite;
+    transition: transform 0.25s ease;
+  }
+  #love-letter-btn:hover { transform: scale(1.08); }
+  @keyframes btnBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+  }
+
+  #love-letter-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(18, 12, 0, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  #love-letter-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #love-letter-card {
+    max-width: 620px;
+    width: 100%;
+    max-height: 82vh;
+    overflow-y: auto;
+    background: linear-gradient(160deg, rgba(58,40,0,0.96), rgba(15,10,0,0.98));
+    border: 1px solid rgba(255,204,51,0.35);
+    border-radius: 22px;
+    padding: 40px 32px;
+    box-shadow: 0 0 40px rgba(255,180,40,0.35);
+    color: #fff2cc;
+    font-family: 'Indie Flower','Bradley Hand','Segoe Script',cursive;
+    transform: translateY(18px) scale(0.96);
+    transition: transform 0.4s ease;
+    position: relative;
+  }
+  #love-letter-overlay.visible #love-letter-card {
+    transform: translateY(0) scale(1);
+  }
+  #love-letter-card h2 {
+    text-align: center;
+    margin: 0 0 22px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ffdd66, #ffb300, #fff4b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #love-letter-card p {
+    line-height: 1.75;
+    font-size: 1.1rem;
+    margin: 0 0 16px;
+    text-shadow: 0 0 8px rgba(255,180,40,0.15);
+  }
+  #love-letter-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #ffd98a;
+    font-size: 1.35rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+  }
+  #love-letter-close:hover { color: #fff; }
+
+  @media (max-width: 480px) {
+    #love-letter-btn { width: 52px; height: 52px; font-size: 1.3rem; bottom: 18px; right: 18px; }
+    #love-letter-card { padding: 30px 22px; border-radius: 18px; }
+    #love-letter-card h2 { font-size: 1.5rem; }
+    #love-letter-card p { font-size: 1rem; }
+  }
+
+*{-webkit-user-select:none;user-select:none}img,audio,video{-webkit-user-drag:none;user-drag:none}

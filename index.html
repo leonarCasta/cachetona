@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="theme-color" content="#000000">
+<title>Corazón de Flores Amarillas 💛</title>
+<meta name="description" content="Una galaxia dorada donde un corazón de partículas se transforma en una flor y vuelve a corazón, con fotos y frases del Día de las Flores Amarillas.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌻</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="start-screen">
+  <div class="start-note">para mis ojitos bellos</div>
+  <div class="pulse-text">Toca para iniciar</div>
+  <div class="start-heart" aria-hidden="true">🌻</div>
+</div>
+
+<div id="top-title"></div>
+
+<button id="love-letter-btn" aria-label="Leer mensaje">💌</button>
+
+<div id="love-letter-overlay">
+  <div id="love-letter-card">
+    <button id="love-letter-close" aria-label="Cerrar mensaje">✕</button>
+    <h2>Para ti 💛</h2>
+    <div id="love-letter-body"></div>
+  </div>
+</div>
+
+<canvas id="c"></canvas>
+
+<audio id="audio" loop></audio>
+
+<script src="three.min.js"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

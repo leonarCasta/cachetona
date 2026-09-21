@@ -1,6 +1,6 @@
 const DEFAULTS = {
   titulo: "Feliz Día de las Flores Amarillas 🌻",
-  mensaje: "Hay personas que llegan y, sin darse cuenta, hacen que muchos de tus días sean mejores. Así eres tú para mí.\n\nGracias por cada momento compartido, por las risas y por estar ahí incluso en lo simple. Quiero que sepas cuánto vales y cuánto significas para mí.\n\nQue esta flor amarilla te recuerde, hoy y siempre, lo especial que eres.",
+  mensaje: "Feliz día amor, es nuestro aniversario y quiero que sepas lo mucho que me has marcado en esta vida tan corta.\n\nQuiero que sepas lo mucho que te amo y aprecio los momentos que hemos tenido, y sobre todo que siempre estamos en los momentos más difíciles.\n\nTe agradezco todo, mi cachetona. Gracias por compartir cada día estando a mi lado sin importar la situación.\n\nQue esta flor amarilla te recuerde, hoy y siempre, lo especial que eres.",
   frases: [
     "🌻 Como el girasol, miro hacia ti", "🌼 Gracias por ser mi sol de siempre", "🌻 Contigo hasta lo simple brilla",
     "🌼 Hoy el amarillo lleva tu nombre", "🌻 Esta flor te recuerda cuánto vales", "🌼 Tu amistad, mi lugar favorito",
